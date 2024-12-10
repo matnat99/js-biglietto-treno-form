@@ -1,0 +1,28 @@
+/* GENERAL */
+body {
+  background-color: #a90d4d;
+  color: white;
+}
+
+.container h1, .container h2 {
+  margin-bottom: 20px;
+}
+  
+.card {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+}
+
+/* BUTTONS */
+.btn-primary {
+  background-color: #a90d4d;
+  border: none;
+}
+  
+.btn-secondary {
+  background-color: #e0e0e0;
+  color: black;
+  border: none;
+}
