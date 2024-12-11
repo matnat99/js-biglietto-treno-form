@@ -18,24 +18,24 @@
         <div class="row gy-3">
           <div class="col-md-4">
             <label for="full-name" class="form-label fw-bold">Nome Cognome</label>
-            <input type="text" class="form-control" id="full-name">
+            <input type="text" class="form-control" id="full-name" required>
           </div>
           <div class="col-md-4">
             <label for="km" class="form-label fw-bold">Km da percorrere</label>
-            <input type="number" class="form-control" id="km">
+            <input type="number" class="form-control" id="km" min="1" required>
           </div>
           <div class="col-md-4">
             <label for="age" class="form-label fw-bold">Fascia d'età</label>
-            <select class="form-select" id="age">
-              <option value="maggiorenne" selected>Maggiorenne</option>
+            <select class="form-select" id="age" required>
+              <option selected>Maggiorenne</option>
               <option value="minorenne">Minorenne</option>
               <option value="over65">Over 65</option>
             </select>
           </div>
         </div>
         <div class="text-center mt-4">
-          <button type="submit" class="btn btn-primary me-2">Genera</button>
-          <button type="reset" class="btn btn-secondary">Annulla</button>
+          <button id="btn-submit" type="submit" class="btn btn-primary me-2">Genera</button>
+          <button id="btn-reset" type="reset" class="btn btn-secondary">Annulla</button>
         </div>
       </div>
    </form>

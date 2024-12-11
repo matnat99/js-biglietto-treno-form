@@ -1,3 +1,8 @@
+//Functions
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
+}
+
 //DOM Elements
 // Forms
 const formElm = document.getElementById('form')
@@ -5,6 +10,8 @@ const formElm = document.getElementById('form')
 const fullNameElm = document.getElementById('full-name')
 const kmElm = document.getElementById('km')
 const ageElm = document.getElementById('age')
+const btnSubmitElm = document.getElementById('btn-submit')
+const btnResetElm = document.getElementById('btn-reset')
 // Ticket
 const ticketElm = document.getElementById('ticket')
 const passengerNameElm = document.getElementById('passenger-name')
@@ -20,7 +27,7 @@ const priceKm = 0.21
 formElm.addEventListener('submit', function (event) {
   event.preventDefault();
 
-  const fullName = fullNameElm.value
+  const fullName = fullNameElm
   const km = Number(kmElm.value)
   const ageSelect = ageElm.value
 
@@ -37,18 +44,18 @@ formElm.addEventListener('submit', function (event) {
     offer = "Sconto Over 65"
   }
 
-  //Generazione numeri randomici
-  const wagon = Math.floor(Math.random() * 10) + 1
-  const cpCode = Math.floor(10000 + Math.random() * 90000)
 
-  
-  passengerNameElm.innerHTML = fullName
+  //Print
+  passengerNameElm.innerHTML = fullName.value
   offerElm.innerHTML = offer
-  wagonElm.innerHTML = wagon
-  cpCodeElm.innerHTML = cpCode
+  wagonElm.innerHTML = getRndInteger(1,10)
+  cpCodeElm.innerHTML = getRndInteger(10000,90000)
   ticketPriceElm.innerHTML = `€${totalPrice.toFixed(2)}`
 
   ticketElm.classList.remove('d-none')
 });
 
 
+btnResetElm.addEventListener('click', function(){
+  ticketElm.classList.add('d-none')
+})
